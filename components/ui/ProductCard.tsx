@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import Currency from "./Currency";
 import IconButton from "./Icon-Button";
-// import usePreviewModal from "@/hooks/use-preview-modal";
+import usePreviewModal from "@/hooks/UsePreviewModal";
 // import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
 import { BiExpand } from "react-icons/bi";
@@ -17,7 +17,7 @@ interface ProductCard {
 }
 
 const ProductCard: React.FC<ProductCard> = ({ data }) => {
-  //   const previewModal = usePreviewModal();
+  const previewModal = usePreviewModal();
   //   const cart = useCart();
   const router = useRouter();
 
@@ -28,7 +28,7 @@ const ProductCard: React.FC<ProductCard> = ({ data }) => {
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
 
-    // previewModal.onOpen(data);
+    previewModal.onOpen(data);
   };
 
   const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
